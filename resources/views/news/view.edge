@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>news/views</title>
+</head>
+<body>
+    <h1>berita Palu</h1>
+
+    @each(article in articles)
+        <h3>{{ article.title }}</h3>
+        <h3>{{ article.slug }}</h3>
+        <p>{{ article.content }}</p>
+    @end
+    
+</body>
+</html>
