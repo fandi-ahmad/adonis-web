@@ -13,9 +13,9 @@
 
     <h1>halaman edit news</h1>
     <p>{{ article.title }}</p>
-    {{--  <form action="{{ route('news_update', [article.slug]) }}" method="POST">  --}}
-    <form action="" method="POST">
+    <form action="{{ route('news_update', [article.slug]) }}?_method=PATCH" method="POST">
         {{ csrfField() }}
+        {{--  <input type="hidden" name="_method" value="PATCH">  --}}
         <input type="text" name="title" id="title" name="title" value="{{ article.title }}">
         <input type="file" name="image" id="">
         <textarea name="content" id="" cols="30" rows="10">{{ article.content }}</textarea>

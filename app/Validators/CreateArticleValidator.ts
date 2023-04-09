@@ -25,7 +25,7 @@ export default class CreateArticleValidator {
    */
   public schema = schema.create({
     title: schema.string(),
-    image: schema.string(),
+    image: schema.string.optional(),
     content: schema.string(),
   })
 

@@ -43,7 +43,10 @@ export default class ArticlesController {
         return view.render('news/edit', { article })
     }
 
-    public async update() {
-        // 
+    public async update({request, response, params}) {
+        const payload = await request.validate(CreateArticleValidator)
+        // await Database.from('articles').update(payload)
+        await Database.from('articles').where('slug', params.slug).update(payload)
+        return response.redirect().back()
     }
 }
