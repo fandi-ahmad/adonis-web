@@ -39,7 +39,7 @@ Route.post('/news/create', 'ArticlesController.store').as('news_store')
 Route.get('/news/:slug/edit', 'ArticlesController.edit').as('news_edit')
 
 
-Route.post('/news/:slug', 'ArticlesController.update').as('news_update')
+Route.patch('/news/:slug', 'ArticlesController.update').as('news_update')
 
 // .where('id', {
 //   match: /^[0-9]+$/,
