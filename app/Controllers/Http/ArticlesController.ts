@@ -1,13 +1,15 @@
 // import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 import Database from "@ioc:Adonis/Lucid/Database"
-// import { schema } from '@ioc:Adonis/Core/Validator'
+import Article from "App/Models/Article"
 import CreateArticleValidator from "App/Validators/CreateArticleValidator"
 
 export default class ArticlesController {
     public async index({view}) {
         // ambil data dari db
-        const articles = await Database.from('articles').select('*')
+        // pemberian nama model harus sama dengan nama tabel pada database
+        // const articles = await Database.from('articles').select('*')     | perintah jika tidak menggunakan Model
+        const articles = await Article.all()
         return view.render('news/view', {articles})
     }
 
